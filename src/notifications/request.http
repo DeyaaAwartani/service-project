@@ -1,0 +1,20 @@
+### Email Notification (create)
+POST http://localhost:3000/notifications/email
+Content-type: application/json
+
+{
+  "toEmail": "user@test.com",
+  "ccList": ["cc1@test.com", "cc2@test.com"],
+  "bccList": ["bcc1@test.com"],
+  "title": "Purchase Success",
+  "message": "successfully Purchase product"
+}
+
+### SMS Notification (create)
+POST http://localhost:3000/notifications/sms
+Content-type: application/json
+
+{
+  "toPhoneNumber": "0781111222",
+  "message": "successfully Purchase product"
+}
