@@ -1,24 +1,17 @@
-import { IsArray, IsEmail, IsOptional, IsString, MaxLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsObject, IsString } from 'class-validator';
 
 export class CreateEmailNotificationDto {
-  
   @IsEmail()
   toEmail: string;
 
-  @IsOptional()
-  @IsArray()
-  @IsEmail({}, { each: true })
-  ccList?: string[];
-
-  @IsOptional()
-  @IsArray()
-  @IsEmail({}, { each: true })
-  bccList?: string[];
-
   @IsString()
-  @MaxLength(255)
+  @IsNotEmpty()
   title: string;
 
   @IsString()
-  message: string;
+  @IsNotEmpty()
+  template: string;
+
+  @IsObject()
+  templateData: Record<string, any>;
 }

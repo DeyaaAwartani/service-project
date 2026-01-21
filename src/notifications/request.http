@@ -1,20 +1,23 @@
-### Email Notification (create)
+### Create Email Notification (PENDING with template)
 POST http://localhost:3000/notifications/email
-Content-type: application/json
+Content-Type: application/json
 
 {
-  "toEmail": "user@test.com",
-  "ccList": ["cc1@test.com", "cc2@test.com"],
-  "bccList": ["bcc1@test.com"],
-  "title": "Purchase Success",
-  "message": "successfully Purchase product"
+  "toEmail": "wanted.dr.ali@gmail.com",
+  "title": "Purchase Successful",
+  "template": "purchase-success",
+  "templateData": {
+    "orderId": 12,
+    "productLabel": "BYD segaull",
+    "amount": "10000.00"
+  }
 }
 
-### SMS Notification (create)
+### Send SMS via Twilio
 POST http://localhost:3000/notifications/sms
-Content-type: application/json
+Content-Type: application/json
 
 {
-  "toPhoneNumber": "0781111222",
-  "message": "successfully Purchase product"
+  "toPhoneNumber": "+962782933735",
+  "message": "Hello from Twilio trial ✅"
 }

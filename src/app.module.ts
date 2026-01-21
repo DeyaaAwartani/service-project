@@ -31,7 +31,7 @@ import { APP_GUARD } from '@nestjs/core';
     ThrottlerModule.forRoot([
       {
         ttl: minutes(5),
-        limit: 10,
+        limit: 30,
       },
     ]),
     NotificationsModule,

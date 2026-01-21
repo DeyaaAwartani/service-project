@@ -1,11 +1,11 @@
-import { IsString, MaxLength } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateSmsNotificationDto {
-  
   @IsString()
-  @MaxLength(30)
+  @IsNotEmpty()
   toPhoneNumber: string;
 
   @IsString()
+  @IsNotEmpty()
   message: string;
 }
